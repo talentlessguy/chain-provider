@@ -47,6 +47,10 @@ export const networks = [
     chainId: 80001
   },
   {
+    name: 'mumbai',
+    chainId: 80001
+  },
+  {
     name: 'arbitrum-mainnet',
     chainId: 42161
   },
@@ -81,8 +85,35 @@ export function getNetwork(network?: Networkish): null | Network {
   // Chain name
   if (typeof network === 'string') {
     const matches = networks.filter((n) => n.name === network)
+
     if (matches.length) {
-      return { name: matches[0].name, chainId: matches[0].chainId }
+      let networkName = matches[0].name
+
+      switch (networkName) {
+        case 'polygon':
+          networkName = 'polygon-mainnet'
+          break
+        case 'arbitrum':
+          networkName = 'arbitrum-mainnet'
+          break
+        case 'optimism':
+          networkName = 'optimism-mainnet'
+          break
+        case 'bsc':
+          networkName = 'bsc-mainnet'
+          break
+        case 'optimism-kovan':
+          networkName = 'optimism-testnet'
+          break
+        case 'mumbai':
+          networkName = 'polygon-testnet'
+          break
+        case 'arbitrum-rinkeby':
+          networkName = 'arbitrum-testnet'
+          break
+      }
+
+      return { name: networkName, chainId: matches[0].chainId }
     }
     return null
   }

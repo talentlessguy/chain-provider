@@ -27,6 +27,7 @@ export class ChainProvider extends EtherscanProvider {
       case 'bsc':
       case 'polygon':
       case 'arbitrum':
+      case 'mumbai':
         break
       default:
         logger.throwError('unsupported network', Logger.errors.UNSUPPORTED_OPERATION, {
