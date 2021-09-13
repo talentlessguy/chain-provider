@@ -32,7 +32,7 @@ const provider = new ChainProvider('polygon')
 
 [v-badge-url]: https://img.shields.io/npm/v/chain-provider.svg?style=for-the-badge&color=53a3d3&label=&logo=npm
 [npm-url]: https://www.npmjs.com/package/chain-provider
-[cov-badge-url]: https://img.shields.io/coveralls/github/talentlessguy/chain-provider?style=for-the-badge&color=53a3d3
+[cov-badge-url]: https://img.shields.io/coveralls/github/talentlessguy/chain-provider?style=for-the-badge&color=53a3d3&
 [cov-url]: https://coveralls.io/github/talentlessguy/chain-provider
 [dl-badge-url]: https://img.shields.io/npm/dt/chain-provider?style=for-the-badge&color=53a3d3
 [github-actions]: https://github.com/talentlessguy/chain-provider/actions
