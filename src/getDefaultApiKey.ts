@@ -10,7 +10,13 @@ export const getDefaultApiKey = (network: string) => {
     case 'arbitrum':
     case 'arbitrum-mainnet':
     case 'arbitrum-testnet':
-
+    case 'homestead':
+    case 'ethereum':
+    case 'mainnet':
+    case 'kovan':
+    case 'ropsten':
+    case 'goerli':
+    case 'rinkeby':
     case 'optimism-kovan':
       return '9D13ZE7XSBTJ94N9BNJ2MA33VMAY2YPIRB'
     case 'bsc-mainnet':

@@ -30,6 +30,15 @@ export class ChainProvider extends EtherscanProvider {
       case 'arbitrum':
       case 'mumbai':
       case 'chapel':
+
+      // standard networks
+      case 'homestead':
+      case 'ethereum':
+      case 'mainnet':
+      case 'kovan':
+      case 'ropsten':
+      case 'goerli':
+      case 'rinkeby':
         break
       default:
         logger.throwError('unsupported network', Logger.errors.UNSUPPORTED_OPERATION, {

@@ -37,6 +37,26 @@ export const networks = [
   {
     name: 'arbitrum-testnet',
     chainId: 421611
+  },
+  {
+    name: 'homestead',
+    chainId: 1
+  },
+  {
+    name: 'ropsten',
+    chainId: 3
+  },
+  {
+    name: 'rinkeby',
+    chainId: 4
+  },
+  {
+    name: 'goerli',
+    chainId: 5
+  },
+  {
+    name: 'kovan',
+    chainId: 42
   }
 ]
 
