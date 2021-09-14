@@ -18,4 +18,12 @@ t('community API key is used by default', () => {
   assert.equal(p.isCommunityResource(), true)
 })
 
+t('mainnet and testnet are supported as well', () => {
+  const p1 = new ChainProvider('homestead')
+  const p2 = new ChainProvider('ropsten')
+
+  assert.equal(p1.network.chainId, 1)
+  assert.equal(p2.network.chainId, 3)
+})
+
 t.run()

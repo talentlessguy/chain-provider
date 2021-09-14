@@ -37,4 +37,11 @@ t('optimism', () => {
   assert.equal(p1, p2)
 })
 
+t('arbitrum', () => {
+  const p1 = new ChainProvider('arbitrum')
+  const p2 = new ChainProvider('arbitrum-mainnet')
+
+  assert.equal(p1, p2)
+})
+
 t.run()
