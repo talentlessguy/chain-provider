@@ -1,6 +1,6 @@
 {
   "name": "chain-provider",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Multichain ethers.js provider based on `EtherscanProvider`.",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
