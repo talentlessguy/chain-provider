@@ -30,7 +30,7 @@ export class ChainProvider extends EtherscanProvider {
       case 'arbitrum':
       case 'mumbai':
       case 'chapel':
-        break
+
       default:
         logger.throwError('unsupported network', Logger.errors.UNSUPPORTED_OPERATION, {
           network
@@ -69,21 +69,18 @@ export class ChainProvider extends EtherscanProvider {
         return 'https://api.rinkeby-explorer.arbitrum.io'
       case 'homestead':
         return 'https://api.etherscan.io'
-        break
+
       case 'ropsten':
         return 'https://api-ropsten.etherscan.io'
-        break
+
       case 'rinkeby':
         return 'https://api-rinkeby.etherscan.io'
-        break
+
       case 'kovan':
         return 'https://api-kovan.etherscan.io'
-        break
+
       case 'goerli':
         return 'https://api-goerli.etherscan.io'
-        break
     }
-
-    return logger.throwArgumentError('unsupported network', 'network', this.network)
   }
 }

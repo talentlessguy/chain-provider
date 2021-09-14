@@ -2,7 +2,7 @@ import { ChainProvider } from '../src/ChainProvider'
 import { suite } from 'uvu'
 import * as assert from 'uvu/assert'
 
-const t = suite('network aliases')
+const t = suite('Network aliases')
 
 t('polygon', () => {
   const p1 = new ChainProvider('polygon')
