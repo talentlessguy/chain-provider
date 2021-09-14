@@ -10,11 +10,14 @@ export const getDefaultApiKey = (network: string) => {
     case 'arbitrum':
     case 'arbitrum-mainnet':
     case 'arbitrum-testnet':
+
     case 'optimism-kovan':
       return '9D13ZE7XSBTJ94N9BNJ2MA33VMAY2YPIRB'
     case 'bsc-mainnet':
     case 'bsc-testnet':
     case 'bsc':
+    case 'binance':
+    case 'chapel':
       return 'EVTS3CU31AATZV72YQ55TPGXGMVIFUQ9M9'
     case 'polygon-mainnet':
     case 'polygon-testnet':

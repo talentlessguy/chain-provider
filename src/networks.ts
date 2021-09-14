@@ -11,23 +11,11 @@ export const networks = [
     chainId: 10
   },
   {
-    name: 'optimism',
-    chainId: 10
-  },
-  {
     name: 'optimism-testnet',
     chainId: 69
   },
   {
-    name: 'optimism-kovan',
-    chainId: 69
-  },
-  {
     name: 'bsc-mainnet',
-    chainId: 56
-  },
-  {
-    name: 'bsc',
     chainId: 56
   },
   {
@@ -39,23 +27,11 @@ export const networks = [
     chainId: 137
   },
   {
-    name: 'polygon',
-    chainId: 137
-  },
-  {
     name: 'polygon-testnet',
     chainId: 80001
   },
   {
-    name: 'mumbai',
-    chainId: 80001
-  },
-  {
     name: 'arbitrum-mainnet',
-    chainId: 42161
-  },
-  {
-    name: 'arbitrum',
     chainId: 42161
   },
   {
@@ -64,10 +40,43 @@ export const networks = [
   }
 ]
 
-export function getNetwork(network?: Networkish): null | Network {
-  if (network == null) {
-    return null
+const aliasToNetwork = (alias: string) => {
+  switch (alias) {
+    case 'ethereum':
+    case 'mainnet':
+      return 'homestead'
+
+    case 'polygon':
+      return 'polygon-mainnet'
+
+    case 'arbitrum':
+      return 'arbitrum-mainnet'
+
+    case 'optimism':
+      return 'optimism-mainnet'
+
+    case 'bsc':
+    case 'binance':
+      return 'bsc-mainnet'
+
+    case 'optimism-kovan':
+      return 'optimism-testnet'
+
+    case 'mumbai':
+      return 'polygon-testnet'
+
+    case 'arbitrum-rinkeby':
+      return 'arbitrum-testnet'
+
+    case 'chapel':
+      return 'bsc-testnet'
+    default:
+      return alias
   }
+}
+
+export function getNetwork(network?: Networkish): null | Network {
+  if (network == null) return null
 
   // Chain ID
   if (typeof network === 'number') {
@@ -84,35 +93,11 @@ export function getNetwork(network?: Networkish): null | Network {
 
   // Chain name
   if (typeof network === 'string') {
-    const matches = networks.filter((n) => n.name === network)
+    let networkName = aliasToNetwork(network)
+
+    const matches = networks.filter((n) => n.name === networkName)
 
     if (matches.length) {
-      let networkName = matches[0].name
-
-      switch (networkName) {
-        case 'polygon':
-          networkName = 'polygon-mainnet'
-          break
-        case 'arbitrum':
-          networkName = 'arbitrum-mainnet'
-          break
-        case 'optimism':
-          networkName = 'optimism-mainnet'
-          break
-        case 'bsc':
-          networkName = 'bsc-mainnet'
-          break
-        case 'optimism-kovan':
-          networkName = 'optimism-testnet'
-          break
-        case 'mumbai':
-          networkName = 'polygon-testnet'
-          break
-        case 'arbitrum-rinkeby':
-          networkName = 'arbitrum-testnet'
-          break
-      }
-
       return { name: networkName, chainId: matches[0].chainId }
     }
     return null

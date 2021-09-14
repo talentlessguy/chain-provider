@@ -25,9 +25,11 @@ export class ChainProvider extends EtherscanProvider {
       case 'optimism':
       case 'optimism-kovan':
       case 'bsc':
+      case 'binance':
       case 'polygon':
       case 'arbitrum':
       case 'mumbai':
+      case 'chapel':
         break
       default:
         logger.throwError('unsupported network', Logger.errors.UNSUPPORTED_OPERATION, {

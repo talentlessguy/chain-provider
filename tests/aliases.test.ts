@@ -7,13 +7,27 @@ const t = suite('network aliases')
 t('polygon', () => {
   const p1 = new ChainProvider('polygon')
   const p2 = new ChainProvider('polygon-mainnet')
-  assert.equal(p1.network, p2.network)
+  assert.equal(p1, p2)
 })
 
 t('polygon testnet', () => {
   const p1 = new ChainProvider('polygon-testnet')
   const p2 = new ChainProvider('mumbai')
-  assert.equal(p1.network, p2.network)
+  assert.equal(p1, p2)
+})
+
+t('binance', () => {
+  const p1 = new ChainProvider('binance')
+  const p2 = new ChainProvider('bsc')
+
+  assert.equal(p1, p2)
+})
+
+t('binance testnet', () => {
+  const p1 = new ChainProvider('bsc-testnet')
+  const p2 = new ChainProvider('chapel')
+
+  assert.equal(p1, p2)
 })
 
 t.run()
