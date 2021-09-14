@@ -12,4 +12,10 @@ t('it throws a logger error for unsupported networks', () => {
   }
 })
 
+t('community API key is used by default', () => {
+  const p = new ChainProvider('polygon')
+
+  assert.equal(p.isCommunityResource(), true)
+})
+
 t.run()

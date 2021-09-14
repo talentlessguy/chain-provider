@@ -30,4 +30,11 @@ t('binance testnet', () => {
   assert.equal(p1, p2)
 })
 
+t('optimism', () => {
+  const p1 = new ChainProvider('optimism')
+  const p2 = new ChainProvider('optimism-mainnet')
+
+  assert.equal(p1, p2)
+})
+
 t.run()
