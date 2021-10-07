@@ -8,6 +8,8 @@ import { getDefaultApiKey } from './getDefaultApiKey'
 const logger = new Logger(version)
 
 export class ChainProvider extends EtherscanProvider {
+  apiKey: string
+  network: Network
   constructor(network?: Networkish, apiKey?: string) {
     const standardNetwork = getNetwork(network == null ? 'optimism-mainnet' : network)
 
