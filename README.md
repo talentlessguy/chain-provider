@@ -27,7 +27,7 @@ pnpm i chain-provider
 ```ts
 import { ChainProvider } from 'chain-provider'
 
-const provider = new ChainProvider('polygon')
+const provider = new ChainProvider('polygon' /* optional API key here */)
 ```
 
 [v-badge-url]: https://img.shields.io/npm/v/chain-provider.svg?style=for-the-badge&color=53a3d3&label=&logo=npm
